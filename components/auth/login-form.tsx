@@ -15,6 +15,8 @@ import * as z from "zod";
 import { LoginSchema } from '@/schemas';
 import { Input } from '../ui/input';
 import { Button } from '../ui/button';
+import { FormError } from '../form-error';
+import { FormSuccess } from '../form-success';
 
 export const LoginForm = () => {
   const form = useForm<z.infer<typeof LoginSchema>>({
@@ -75,6 +77,8 @@ export const LoginForm = () => {
               )}
               />
           </div>
+          <FormError message=''></FormError>
+          <FormSuccess message=''></FormSuccess>
           <Button
             type='submit'
             className="w-full"
