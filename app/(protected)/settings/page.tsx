@@ -97,7 +97,7 @@ const form = useForm<z.infer<typeof SettingsSchema>>({
                             </FormItem>
                     )}
                 />
-                {user?.is0Auth === false && (
+                {user?.isOAuth === false && (
                 <>
                     <FormField 
                         control={form.control}
@@ -185,7 +185,7 @@ const form = useForm<z.infer<typeof SettingsSchema>>({
                             </FormItem>
                     )}
                 />
-                {user?.is0Auth === false && (
+                {user?.isOAuth === false && (
                     <FormField 
                         control={form.control}
                         name="isTwoFactorEnabled"
