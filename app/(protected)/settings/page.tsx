@@ -45,6 +45,7 @@ const form = useForm<z.infer<typeof SettingsSchema>>({
         name: user?.name || undefined,
         email: user?.email || undefined,
         role: user?.role || undefined,
+        isTwoFactorEnabled: user?.isTwoFactorEnabled || undefined
     }
 })
 
@@ -141,14 +142,14 @@ const form = useForm<z.infer<typeof SettingsSchema>>({
                         render={({ field }) => (
                             <FormItem>
                                 <FormLabel>
-                                    New Password
+                                    Confirm Password
                                 </FormLabel>
                                 <FormControl>
                                     <Input 
                                         {...field}
                                         placeholder="******"
-                                        type="password"
                                         disabled={isPending}
+                                        type="password"
                                     />
                                 </FormControl>
                                 <FormMessage />
@@ -185,9 +186,10 @@ const form = useForm<z.infer<typeof SettingsSchema>>({
                     )}
                 />
                 {user?.is0Auth === false && (
-                    <FormField control={form.control}
-                            name="isTwoFactorEnabled"
-                            render={({ field }) => (
+                    <FormField 
+                        control={form.control}
+                        name="isTwoFactorEnabled"
+                        render={({ field }) => (
                             <FormItem className="flex flex-row items-center justify-between rounded-lg border p-3 shadow-sm">
                                     <div className="space-y-0.5">
                                         <FormLabel>Two Factor Authentication</FormLabel>
