@@ -21,7 +21,7 @@ export const settings = async (
             return { error: "Unauthorized."}
         }
 
-        if(user.is0Auth) {
+        if(user.isOAuth) {
             values.email = undefined;
             values.password = undefined;
             values.newPassword = undefined;
