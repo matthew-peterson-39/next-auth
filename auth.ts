@@ -59,7 +59,7 @@ export const {
         session.user.isTwoFactorEnabled = token.isTwoFactorEnabled;
         session.user.name = token.name;
         session.user.email = token.email;
-        session.user.isOAuth = token.is0Auth;
+        session.user.isOAuth = token.isOAuth;
       }
 
       return session;
