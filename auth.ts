@@ -46,6 +46,7 @@ export const {
 
       return true;
     },
+
     async session({ session, token }) {
       console.log({sessionToken: token, session});
       
@@ -56,18 +57,19 @@ export const {
       if (token.role && session.user) {
         session.user.role = token.role;
       }
+      if (session.user) {
+        session.user.isTwoFactorEnabled = token.isTwoFactorEnabled;
+      }
 
       return session;
     },
+
     async jwt({ token }) {
       if (!token.sub) return token;
-      
       const existingUser = await getUserById(token.sub);
-      
       if (!existingUser) return token;
-
       token.role = existingUser.role;
-     
+      token.isTwoFactorEnabled = existingUser.isTwoFactorEnabled
       return token;
     }
   },
