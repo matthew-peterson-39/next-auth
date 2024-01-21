@@ -27,6 +27,12 @@ npm i
 
 2. Create a .env file and add it to the .gitignore file if it is not already there for some reason.
 
+3. Add the following code to your .env file
+
+```bash
+NEXT_PUBLIC_APP_URL="http://localhost:3000"
+```
+
 ### Auth Secret
 
 [Authjs MissingSecret](https://authjs.dev/reference/core/errors/#missingsecret)
