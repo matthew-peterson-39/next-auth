@@ -92,3 +92,5 @@ GOOGLE_CLIENT_SECRET=""
 - Copy the client ID and client secret and paste it into the .env file of your project.
 
 ### Resend
+
+TODO
