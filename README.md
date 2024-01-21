@@ -130,3 +130,20 @@ RESEND_API_KEY=""
 - Then, Select Create API Key
 - Name the API key and click continue.
 - Copy the API key displayed and add it to your .env file.
+
+# Deployment
+
+- Once you are ready to deploy your project, you need to do a few updates to your .env variables.
+
+ 
+### Github OAuth
+1. Navigate to Github.com > Settings > Developer Settings > OAuth Apps > \<your_app_name> and then update the Homepage URL and Authorization callback URL to use your deployment domain.
+
+### Google OAuth
+
+1. Navigate to Google API Console > \<your_app_name> > API & Services > OAuth consent screen > EDIT APP and then update the App domain and Authorized domains. 
+
+2. Next, update the active credentials for your application. On the sidebar select Credentials > select your application and update the URIs and the Authroized redirect URIs.
+
+### Resend
+
