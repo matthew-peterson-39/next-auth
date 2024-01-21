@@ -17,7 +17,7 @@ Another important thing to note is that this repo was made as a template and use
 - 
 - 2FA & Email Verification - Resend
 
-# Setting .env & Dependencies
+# Project Setup
 
 1. Install project dependencies
 
@@ -26,6 +26,22 @@ npm i
 ```
 
 2. Create a .env file and add it to the .gitignore file if it is not already there for some reason.
+
+### Auth Secret
+
+[Authjs MissingSecret](https://authjs.dev/reference/core/errors/#missingsecret)
+
+- Create a .env variable for the auth secret key using:
+
+```bash
+AUTH_SECRET=""
+```
+
+- For Unix systems use the following command to generate a good key:
+
+```bash
+openssl rand -hex 32
+```
 
 ### Prisma 
 
