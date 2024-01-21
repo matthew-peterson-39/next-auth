@@ -48,7 +48,7 @@ npx prisma db push
 
 ### Github OAuth
 
-- Create .env variables for github.
+- Create .env variables for Github.
 
 ```bash
 GITHUB_CLIENT_ID=""
@@ -62,3 +62,33 @@ GITHUB_CLIENT_SECRET=""
 - Assign the client ID and client secret to your .env file.
 
 ### Google OAuth
+
+- Create .env variables for Google.
+
+```bash
+GOOGLE_CLIENT_ID=""
+GOOGLE_CLIENT_SECRET=""
+```
+- Populate these variables by navigating to google's api console: https://console.cloud.google.com
+
+- In th navbar at the top, there is a dropdown box that has your projects. Click the box and start a new project.
+
+- Name the project and wait for it to finish setting up before selecting it.
+- Once selected, search API & Services and select the one reading 'API & Services. API management for cloud services'.
+- Navigate to OAuth consent.
+- Select 'External' then press the CREATE button.
+- Add the necessary details, skipping over the Domain, App logo, and Authorized domains for now.
+- Save and continue.
+- If you do not need any special scopes, scroll to the bottom and press save and continue once more.
+- Add test user(s) if you want, though this can be done at any point after setup so it is not necessary at the moment.
+
+- From the side bar, click 'Credentials'.
+- At the top, select 'CREATE CREDENTIALS'.
+- Select OAuth client ID
+- Select the application type as 'Web App'
+- Add authorized JS origins as http://localhost:3000
+- Add authorized redirect URIs w/ http://localhost:3000/api/auth/callback/google
+- Create
+- Copy the client ID and client secret and paste it into the .env file of your project.
+
+### Resend
