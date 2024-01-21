@@ -48,4 +48,17 @@ npx prisma db push
 
 ### Github OAuth
 
+- Create .env variables for github.
+
+```bash
+GITHUB_CLIENT_ID=""
+GITHUB_CLIENT_SECRET=""
+```
+- Populate these variables by logging into Github > Settings > Developer settings > OAuth Apps > New OAuth App
+
+- Name the app whatever you want.
+- Set the homepage URL to http://localhost:3000
+- Set the callbackURL to http://localhost:3000/api/auth/callback/github
+- Assign the client ID and client secret to your .env file.
+
 ### Google OAuth
