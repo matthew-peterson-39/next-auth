@@ -93,4 +93,19 @@ GOOGLE_CLIENT_SECRET=""
 
 ### Resend
 
-TODO
+[Resend](https://resend.com)
+
+- Resend is a simple and tier based email service provider, with a free tier of up to 3,000 emails a month and 100 emails a day. 
+
+- It is important to note that until a domain is added to the project in Resend (this does not include domains provided by Vercel or other deployment services... you must own the domain).
+
+- Another important note is that you will only be able to send emails to the account that you have signed up with on Resend prior to adding a domain. This means that in development, you want to test the email services by logging into your application with the email assosciated with your Resend account.
+
+- Add the .env variable to your project as:
+```bash
+RESEND_API_KEY=""
+```
+- To get the API key, navigate to 'API Keys' on the Resend website.
+- Then, Select Create API Key
+- Name the API key and click continue.
+- Copy the API key displayed and add it to your .env file.
