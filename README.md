@@ -1,36 +1,51 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-## Getting Started
+# NextAuth V5
 
-First, run the development server:
+## [Auth.js](https://authjs.dev/)
+
+This repo is a template repository that aims to streamline the development of projects using NextAuth.
+
+The repo comes with credential login as well as Google and Github OAuth login.
+
+Another important thing to note is that this repo was made as a template and uses a mixture of server and client components. If you are unfamiliar with Next.js, there are many ways to go about handling the flow of a Next.js application and it largely depends on the developer as well as the project itself to determine which approach to use.
+
+# Technologies
+
+- Next.js
+- Tailwind
+- Postgresql - [Neon.tech](https://neon.tech/) 
+- 
+- 2FA & Email Verification - Resend
+
+# Setting .env & Dependencies
+
+1. Install project dependencies
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm i
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2. Create a .env file and add it to the .gitignore file if it is not already there for some reason.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Prisma 
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+- Create a new project using [Neon.tech](https://neon.tech/). Choose a region that is closest to where your project will be hosted.
 
-## Learn More
+- Verify the /prisma/schema.prisma file's datasource db matches the one shown after creating project, then copy the necessary .env variabels from Neon to your projects .env file.
 
-To learn more about Next.js, take a look at the following resources:
+- After adding the .env variables to the project generate the schema using:
+```bash
+npx prisma generate
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Followed by: 
+```bash
+npx prisma db push
+```
+> NOTE: If you experience an error running the above command, try to run it again and it should resolve on its own.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+- To verify success, navigate to Neon -> Tables and you will find tables for each of the models defined in the /prisma/schema.prisma.
 
-## Deploy on Vercel
+### Github OAuth
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+### Google OAuth
