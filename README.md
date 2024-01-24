@@ -12,9 +12,10 @@ Another important thing to note is that this repo was made as a template and use
 # Technologies
 
 - Next.js
-- Tailwind
-- Postgresql - [Neon.tech](https://neon.tech/) 
-- 2FA & Email Verification - Resend
+- Tailwind CSS
+- Prisma
+- Neon
+- Resend
 
 # Project Setup
 
